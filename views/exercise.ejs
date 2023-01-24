@@ -1,0 +1,28 @@
+<%- include('header'); -%>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/styles.css">
+<section id='description'>
+    <header>
+      <nav class="navbar">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0 h1">P & S</span>
+        </div>
+      </nav>
+    </header>
+    <script src="js/jquery.js"></script>
+  
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+  
+    <div class="about">
+    <h1> <%= Description %> </h1>
+  
+      <h2>Search for unlimited exercises to create your routine.</h2>
+      <form action="/exercise" method="POST" class="d-flex" style="margin:auto;max-width:300px">
+        <input type="text" name="targetmuscle" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-light" type="submit">Search</button>
+      </form>
+    </div>
+  </section>
+
+<%- include('footer'); -%>

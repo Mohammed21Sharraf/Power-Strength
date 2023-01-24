@@ -1,0 +1,61 @@
+<%- include('header') -%>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/styles.css">
+<section id='description'>
+    <header>
+      <div class="container-fluid">
+        <!-- Nav Bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand mb-0 h1" >P & S</a>
+             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/profiles">My Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/exercise">Exercises</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/logout">Log Out</a>
+              </li>
+            </ul>
+         </div>
+    </header>
+    <script src="js/jquery.js"></script>
+  
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+  
+    <div class="about">
+    <h1> <%= Description %> </h1>
+    </div>
+
+</section>
+
+<!-- Updating the sets and reps -->
+<h1> Update Sets and Reps of <%= edit.workout %> </h1>
+<form method= "POST" action="/update/<%= edit.workout %>?_method=put"> 
+  <div class="mb-3 mt-3 row g-9 align-items-center">
+    <div class=" col col-lg-2">
+      <label class="form-label">SETS: </label>
+    </div>
+    <div class="col">
+      <input type="text" name="updated_sets" value="<%=edit.sets%>"placeholder="New Sets" class="form-control" >
+    </div>
+  </div>
+  <div class="mb-3 mt-3 row g-9 align-items-center">
+    <div class=" col col-lg-2">
+      <label class="form-label">REPS: </label>
+    </div>
+    <div class="col">
+      <input type="text" name="updated_reps" value="<%=edit.reps%>"placeholder="New Reps" class="form-control" >
+    </div>
+  </div>
+  <button type="submit" class="btn btn-outline-dark">Submit</button>
+</form>
+
+</div>
+<%- include('footer') -%>

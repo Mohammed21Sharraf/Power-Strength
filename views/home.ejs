@@ -1,0 +1,47 @@
+<%- include('header'); -%>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/styles.css">
+
+<!--  about the app -->
+<section id='description'>
+  <header>
+    <nav class="navbar">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">P & S</span>
+        <form class="d-flex" role="search">
+          <a class="btn btn-outline-light" href="/signin" role="button">Sign In</a>
+        </form>
+      </div>
+    </nav>
+  </header>
+  <script src="js/jquery.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+
+  <div class="about">
+  <h1> <%= Description %> </h1>
+
+    <p>Description of this app</p>
+    <a class="btn btn-outline-light" href="/login" role="button">Log In</a>
+  </div>
+</section>
+
+<!-- workout section -->
+<section>
+  <div>
+    <h1> Workouts</h1>
+    <p>Description of the workouts</p>
+  </div>
+</section>
+
+<!-- Exercises -->
+<section>
+  <div>
+    <h1>Exercises</h1>
+    <p>Description of the Exercises</p>
+  </div>
+</section>
+
+
+<%- include('footer'); -%>

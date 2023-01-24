@@ -1,0 +1,71 @@
+<%- include('header'); -%>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/styles.css">
+<section id='description'>
+    <header>
+      <div class="container-fluid">
+        <!-- Nav Bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand mb-0 h1" >P & S</a>
+             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/profiles">My Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/exercise">Exercises</a>
+                </li>
+            </ul>
+         </div>
+    </header>
+    <script src="js/jquery.js"></script>
+  
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+  
+    <div class="about">
+    <h1> <%= Description %> </h1>
+  
+    </div>
+  </section>
+  <div class="container">
+    <h1>Exercises for <%= ex_data[0].muscle %></h1>
+    <table class="table table-hover table-dark table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Muscle</th>
+          <th>Equipment</th>
+          <th>Difficulty</th>
+          <th>Instructions</th>
+          <th>ADD TO YOUR ROUTINE</th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <% for(var i=0; i < ex_data.length; i++) { %>
+        <tr>
+          <td><%= ex_data[i].name %></td>
+          <td><%= ex_data[i].type %></td>
+          <td><%= ex_data[i].muscle %></td>
+          <td><%= ex_data[i].equipment %></td>
+          <td><%= ex_data[i].difficulty %></td>
+          <td><%= ex_data[i].instructions %></td>
+          <td>
+            <form method="POST" action="/profiles">
+              <input type="hidden" value="<%= ex_data[i].name %>" name="workoutName">
+              <input type="hidden" value="<%= ex_data[i].muscle %>" name="muscleName">
+              <button class="btn btn-outline-light">Add</button>
+            </form>
+          </td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+
+<%- include('footer'); -%>
